@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMKS Trampil Jakarta</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Varela Round", sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* tujuan */
+      ol > li {
+        list-style: decimal;
+      }
+      ol ul li {
+        list-style: disc;
+        background: #10e2c6;
+      }
+
+      /* Tambahan CSS untuk tampilan mobile */
+      @media (max-width: 768px) {
+        .navbar {
+          display: none;
+        }
+        .mobile-navbar {
+          display: block;
+        }
+      }
+      @media (min-width: 769px) {
+        .navbar {
+          display: block;
+        }
+        .mobile-navbar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- container -->
+    <div
+      class="bg-[url('./white-background.jpg')] bg-cover bg-center bg-no-repeat h-screen bg-fixed"
+    >
+      <!-- Navbar Desktop -->
+      <nav class="z-30 w-full hidden lg:block fixed top-0 bg-white p-4 shadow">
+        <div class="mx-24 flex justify-between items-center">
+          <a href="" class="flex items-center gap-4 text-2xl font-bold">
+            <img src="./logo.jpeg" alt="Logo" class="w-10 h-10" />
+            <span class="text-blue-700">SMK TRAMPIL JAKARTA</span>
+          </a>
+          <ul class="flex items-center space-x-6 text-gray-500">
+            <li>
+              <a
+                href="./index.html"
+                class="font-semibold text-blue-700 hover:text-blue-700"
+                >Beranda</a
+              >
+            </li>
+            <button
+              id="dropdownHoverButton"
+              data-dropdown-toggle="dropdownHover"
+              data-dropdown-trigger="hover"
+              class="text-gray-500 hover:text-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+              type="button"
+            >
+              Jurusan
+              <svg
+                class="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div
+              id="dropdownHover"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-[200px]"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700"
+                aria-labelledby="dropdownHoverButton"
+              >
+                <li>
+                  <a
+                    href="./manajemen-perkantoran-dan-layanan-bisnis.html"
+                    class="block px-4 py-2 hover:bg-gray-100"
+                    >Manajemen Perkantoran Dan Layanan Bisnis</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./akuntansi-dan-keuangan-lembaga.html"
+                    class="block px-4 py-2 hover:bg-gray-100"
+                    >Akuntansi Dan Keuangan Lembaga</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <li>
+              <a href="#" class="font-semibold hover:text-blue-700"
+                >Pendaftaran</a
+              >
+            </li>
+            <li>
+              <a href="#" class="font-semibold hover:text-blue-700"
+                >Fasilitas</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Navbar Mobile -->
+      <nav class="z-30 lg:hidden fixed top-0 bg-white border-gray-200 shadow">
+        <div
+          class="w-screen flex flex-wrap items-center justify-between mx-auto px-4 py-2.5"
+        >
+          <a href="" class="flex items-center gap-4 text-2xl font-bold">
+            <img src="./logo.jpeg" alt="Logo" class="w-10 h-10" />
+            <span class="text-blue-700 text-base">SMKS TRAMPIL JAKARTA</span>
+          </a>
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <ul
+              class="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:mt-0 md:text-sm md:border-0 md:bg-white md:space-x-8 md:rtl:space-x-reverse"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-700"
+                  aria-current="page"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <button
+                  id="dropdownNavbarLink"
+                  data-dropdown-toggle="dropdownNavbar"
+                  class="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-700 md:p-0 md:w-auto"
+                >
+                  Jurusan
+                  <svg
+                    class="w-2.5 h-2.5 ms-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div
+                  id="dropdownNavbar"
+                  class="w-4/5 z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow static"
+                >
+                  <ul
+                    class="py-2 text-sm text-gray-700"
+                    aria-labelledby="dropdownLargeButton"
+                  >
+                    <li>
+                      <a
+                        href="./manajemen-perkantoran-dan-layanan-bisnis.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                        >Manajemen Perkanoran dan Layanan Bisnis</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="./akuntansi-dan-keuangan-lembaga.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                        >Akuntansi dan Keuangan Lembaga</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-700"
+                  >Pendaftaran</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-700"
+                  >Fasilitas</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main class="mt-16 flex flex-col">
+        <!-- Hero -->
+        <div
+          class="fixed w-full mx-auto h-screen flex flex-col lg:flex-row justify-between items-center px-5 pt-5 lg:px-[100px] lg:pt-0"
+        >
+          <div
+            class="w-full lg:w-4/6 flex flex-col justify-center gap-5 text-[#29bba7] drop-shadow-md"
+          >
+            <h1 class="text-3xl lg:text-5xl font-semibold">
+              SMKS Trampil Jakarta
+            </h1>
+            <span class="text-xl lg:text-2xl font-semibold"
+              >Sekolah Unggulan Untuk Masa Depan Gemilang Menuju Generasi Emas
+              Yang Terampil Dan Berdaya Saing!
+            </span>
+            <a
+              href=""
+              class="w-[200px] h-10 bg-[#24beaa] text-white flex justify-center items-center rounded-full"
+              >Info Lebih Lanjut</a
+            >
+          </div>
+          <img
+            src="./siswi3.png"
+            alt="model"
+            class="w-full lg:w-[50%] h-full opacity-50"
+          />
+        </div>
+        <!-- Tentang -->
+        <div
+          class="z-20 mt-[100vh] w-full h-screen bg-[#1b9181] flex flex-col lg:flex-row justify-center items-center gap-[30px] lg:gap-[100px] lg:px-5 py-10 shadow-lg"
+        >
+          <div class="w-[90%] lg:w-1/2 rounded-xl bg-white overflow-hidden">
+            <iframe
+              class="w-full h-[200px] lg:h-[339px]"
+              src="https://www.youtube.com/embed/zzbXhhuHkmw?si=O59gof8wfqKXH6HX"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <!-- <img
+            src="./tentang-sekolah.jpeg"
+            alt="SMK Trampil"
+            class="w-full hover:opacity-95 hover:scale-110 transition"
+          /> -->
+          </div>
+          <div
+            class="w-[90%] lg:w-1/2 text-white text-lg font-semibold flex flex-col gap-5"
+          >
+            <p>
+              Sekolah Menengah Kebangsaan Trampil atau nama ringkasnya SMK
+              Trampil, merupakan sebuah Sekolah Menengah Kebangsaan Swasta yang
+              terletak di Jl. Olah Raga 2 Cililitan. Jakarta Timur, Indonesia.
+            </p>
+            <p>
+              Sekolah Menengah Kebangsaan Trampil memiliki kod NPSN 20103552.
+              Pada 2010, SMK Trampil memiliki 19 pelajar lelaki dan 40 pelajar
+              perempuan, menjadikan jumlah keseluruhan murid seramai 59 orang.
+            </p>
+          </div>
+        </div>
+        <!-- Berita -->
+        <div
+          class="z-10 w-full h-fit bg-white flex flex-col justify-center gap-[100px] lg:px-5 py-10"
+        >
+          <div class="flex flex-col items-center gap-3 mb-12">
+            <h1 class="text-2xl font-semibold text-gray-500">Berita Sekolah</h1>
+            <div class="w-[200px] h-2 bg-[#26c7b1] rounded-full"></div>
+          </div>
+          <!-- Cards -->
+          <div
+            class="w-full flex flex-col lg:flex-row justify-center gap-[100px] lg:gap-5"
+          >
+            <div
+              class="w-[90%] lg:w-[30%] flex flex-col bg-[#26c7b1] rounded-xl px-7 py-4 pb-10 mx-auto text-white shadow-lg"
+            >
+              <div
+                class="w-full mx-auto -translate-y-20 rounded-2xl shadow-2xl overflow-hidden"
+              >
+                <img
+                  src="./ppdb.jpeg"
+                  alt="berita"
+                  class="w-full hover:scale-105 hover:rotate-1 transition-transform cursor-pointer"
+                />
+              </div>
+              <span class="-translate-y-10">17 Juli 2024</span>
+              <span class="font-semibold text-lg -translate-y-6"
+                >Informasi MPLS SMK Trampil 2024/2025</span
+              >
+              <p>
+                Penerimaan Peserta Didik Baru SMKS Trampil TP 2024/2025 telah
+                dibuka! segera menjadi bagian...
+              </p>
+              <button
+                class="w-[200px] h-10 border-2 border-white hover:bg-white text-white hover:text-[#26c7b1] flex justify-center items-center rounded-full mt-5 transition"
+              >
+                Selengkapnya
+              </button>
+            </div>
+            <div
+              class="w-[90%] lg:w-[30%] flex flex-col bg-[#26c7b1] rounded-xl px-7 py-4 pb-10 mx-auto text-white shadow-lg"
+            >
+              <div
+                class="w-full mx-auto -translate-y-20 rounded-2xl shadow-2xl overflow-hidden"
+              >
+                <img
+                  src="./berita1.jpeg"
+                  alt="berita"
+                  class="w-full hover:scale-105 hover:rotate-1 transition-transform cursor-pointer"
+                />
+              </div>
+              <span class="-translate-y-10">17 Juli 2024</span>
+              <span class="font-semibold text-lg -translate-y-6"
+                >Selamat Datang Bulan Ramadhan 1443 Hijriah</span
+              >
+              <p>
+                Marhaban ya Ramadhan, Marhaban ya Ramadhan, Alhamdulilah kita
+                masih bisa bertemu dengan bulan penuh ampunan...
+              </p>
+              <button
+                class="w-[200px] h-10 border-2 border-white hover:bg-white text-white hover:text-[#26c7b1] flex justify-center items-center rounded-full mt-5 transition"
+              >
+                Selengkapnya
+              </button>
+            </div>
+            <div
+              class="w-[90%] lg:w-[30%] flex flex-col bg-[#26c7b1] rounded-xl px-7 py-4 pb-10 mx-auto text-white shadow-lg"
+            >
+              <div
+                class="w-full mx-auto -translate-y-20 rounded-2xl shadow-2xl overflow-hidden"
+              >
+                <img
+                  src="./berita2.png"
+                  alt="berita"
+                  class="w-full hover:scale-105 hover:rotate-1 transition-transform cursor-pointer brightness-125"
+                />
+              </div>
+              <span class="-translate-y-10">17 Juli 2024</span>
+              <span class="font-semibold text-lg -translate-y-6"
+                >Kegiatan Sekolah ORSELI SMKS Trampil Jakarta</span
+              >
+              <p>
+                Olahraga Sebulan Sekali atau kami biasa singkat jadi ORSELI
+                adalah salah satu kegiatan di SMKS Trampil Jakarta...
+              </p>
+              <button
+                class="w-[200px] h-10 border-2 border-white hover:bg-white text-white hover:text-[#26c7b1] flex justify-center items-center rounded-full mt-5 transition"
+              >
+                Selengkapnya
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="flex flex-col">
+        <div
+          class="z-20 flex flex-col lg:flex-row justify-center gap-5 px-5 py-10 bg-[#26b9a6] text-white"
+        >
+          <div class="w-full lg:w-1/3 flex flex-col">
+            <h3 class="font-semibold text-xl mb-3">Information</h3>
+            <ul class="flex flex-col gap-1">
+              <li>
+                <a href=""
+                  >Jl. Olah Raga No.2, RT.12/RW.5, Cililitan, Kec. Kramat jati,
+                  Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta</a
+                >
+              </li>
+              <li><a href="">Hotline : 021 812345678</a></li>
+              <li><a href="">Whatsapp : +62 8123 456 789</a></li>
+              <li><a href="">E-Mail : humas@smktrampil.sch.id</a></li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-1/4 flex flex-col">
+            <h3 class="font-semibold text-xl mb-3">Feature</h3>
+            <ul class="flex flex-col gap-1">
+              <li><a href="">Visi, Misi dan Tujuan</a></li>
+              <li><a href="">Fasilitas</a></li>
+              <li><a href="">Jurusan</a></li>
+              <li><a href="">Pendaftaran</a></li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-1/4 flex flex-col">
+            <h3 class="font-semibold text-xl mb-3">Social Media</h3>
+            <ul class="flex flex-col gap-1">
+              <li><a href="">Facebook Official</a></li>
+              <li><a href="">Instagram Official</a></li>
+              <li><a href="">YouTube Official</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="z-10 w-full h-14 bg-[#26c7b1] text-white flex justify-center items-center"
+        >
+          <span>Copyright 2024 @ SMK Trampil</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

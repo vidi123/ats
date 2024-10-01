@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AKUNTANSI DAN KEUANGAN LEMBAGA</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Varela Round", sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Tambahan CSS untuk tampilan mobile */
+      @media (max-width: 768px) {
+        .navbar {
+          display: none;
+        }
+        .mobile-navbar {
+          display: block;
+        }
+      }
+      @media (min-width: 769px) {
+        .navbar {
+          display: block;
+        }
+        .mobile-navbar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- container -->
+    <div
+      class="bg-[url('./kelas1.png')] bg-cover bg-center bg-no-repeat h-screen bg-fixed"
+    >
+      <!-- Navbar Desktop -->
+      <nav class="z-30 w-full hidden lg:block fixed top-0 bg-white p-4 shadow">
+        <div class="mx-24 flex justify-between items-center">
+          <a href="" class="flex items-center gap-4 text-2xl font-bold">
+            <img src="./logo.jpeg" alt="Logo" class="w-10 h-10" />
+            <span class="text-blue-700">SMK TRAMPIL JAKARTA</span>
+          </a>
+          <ul class="flex items-center space-x-6 text-gray-500">
+            <li>
+              <a href="./index.html" class="font-semibold hover:text-blue-700"
+                >Beranda</a
+              >
+            </li>
+            <button
+              id="dropdownHoverButton"
+              data-dropdown-toggle="dropdownHover"
+              data-dropdown-trigger="hover"
+              class="text-gray-500 hover:text-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+              type="button"
+            >
+              Jurusan
+              <svg
+                class="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div
+              id="dropdownHover"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-[200px]"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700"
+                aria-labelledby="dropdownHoverButton"
+              >
+                <li>
+                  <a
+                    href="./manajemen-perkantoran-dan-layanan-bisnis.html"
+                    class="block px-4 py-2 hover:bg-gray-100"
+                    >Manajemen Perkantoran Dan Layanan Bisnis</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./akuntansi-dan-keuangan-lembaga.html"
+                    class="block px-4 py-2 text-blue-700"
+                    >Akuntansi Dan Keuangan Lembaga</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <li>
+              <a href="#" class="font-semibold hover:text-blue-700"
+                >Pendaftaran</a
+              >
+            </li>
+            <li>
+              <a href="#" class="font-semibold hover:text-blue-700"
+                >Fasilitas</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Navbar Mobile -->
+      <nav class="z-30 lg:hidden fixed top-0 bg-white border-gray-200 shadow">
+        <div
+          class="w-screen flex flex-wrap items-center justify-between mx-auto px-4 py-2.5"
+        >
+          <a
+            href="./index.html"
+            class="flex items-center gap-4 text-2xl font-bold"
+          >
+            <img src="./logo.jpeg" alt="Logo" class="w-10 h-10" />
+            <span class="text-blue-700 text-base">SMKS TRAMPIL JAKARTA</span>
+          </a>
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <ul
+              class="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:mt-0 md:text-sm md:border-0 md:bg-white md:space-x-8 md:rtl:space-x-reverse"
+            >
+              <li>
+                <a
+                  href="./index.html"
+                  class="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-700"
+                  aria-current="page"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <button
+                  id="dropdownNavbarLink"
+                  data-dropdown-toggle="dropdownNavbar"
+                  class="flex items-center justify-between w-full py-2 px-3 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-700 md:p-0 md:w-auto"
+                >
+                  Jurusan
+                  <svg
+                    class="w-2.5 h-2.5 ms-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div
+                  id="dropdownNavbar"
+                  class="w-4/5 z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow static"
+                >
+                  <ul
+                    class="py-2 text-sm text-gray-700"
+                    aria-labelledby="dropdownLargeButton"
+                  >
+                    <li>
+                      <a
+                        href="./manajemen-perkantoran-dan-layanan-bisnis.html"
+                        class="block px-4 py-2 hover:bg-gray-100"
+                        >Manajemen Perkanoran dan Layanan Bisnis</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="./akuntansi-dan-keuangan-lembaga.html"
+                        class="block px-4 py-2 text-blue-700"
+                        >Akuntansi dan Keuangan Lembaga</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-700"
+                  >Pendaftaran</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-700"
+                  >Fasilitas</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main class="mt-16 flex flex-col">
+        <!-- Hero -->
+        <div
+          class="fixed bg-black bg-opacity-75 w-full mx-auto h-screen flex flex-col lg:flex-row justify-between items-center px-5 pt-5 lg:px-[100px] lg:pt-0"
+        >
+          <div
+            class="w-full lg:w-4/6 flex flex-col justify-center gap-5 text-[#29bba7] drop-shadow-md"
+          >
+            <h1 class="text-3xl lg:text-5xl font-semibold">
+              AKUNTANSI DAN KEUANGAN LEMBAGA
+            </h1>
+          </div>
+        </div>
+        <!-- Konten -->
+        <div
+          class="z-20 lg:mt-[100vh] w-full h-fit bg-white flex flex-col gap-[15px] px-5 py-10 pb-20 shadow-lg text-lg font-semibold"
+        >
+          <h1 class="text-2xl lg:text-5xl text-[#29bba7] font-semibold">
+            AKUNTANSI DAN KEUANGAN LEMBAGA
+          </h1>
+          <p class="text-base text-zinc-900">
+            Akuntansi adalah segala proses yang berhubungan dengan transaksi
+            keuangan. Transaksi keuangan tersebut antara lain adalah mencatat,
+            mengelompokkan, mengolah, menyajikan data yang berhubungan dengan
+            keuangan. Dari informasi yang ada tersebut akan dihasilkan laporan
+            keuangan yang akurat dan bisa menjadi bahan untuk mengambil suatu
+            keputusan. SMK Jurusan Akuntansi dan Keuangan Lembaga (AKL) akan
+            membekali siswa dengan kompetensi dalam mengelola seluruh transaksi
+            keuangan.
+          </p>
+          <h2 class="text-2xl lg:text-3xl">
+            Mata Pelajaran SMK Jurusan Akuntansi dan Keuangan Lembaga
+          </h2>
+          <p class="text-base text-zinc-900">
+            Selain mata pelajaran Muatan Nasional dan Muatan Kewilayahan, siswa
+            akan diajarkan materi Muatan Peminatan Kejuruan. Mata pelajaran
+            Muatan Peminatan Kejuruan ini dibagi menjadi 3, yaitu Dasar Bidang
+            Keahlian, Dasar Program Keahlian, dan Kompetensi Keahlian. Berikut
+            ini akan kita bahas mata pelajaran pada Dasar Program Keahlian dan
+            Kompetensi Kelahlian.
+          </p>
+          <ul class="flex flex-col gap-1 list-disc pl-5">
+            <li>
+              <span>Etika Profesi</span>
+              <p class="text-base text-zinc-900">
+                Mata pelajaran Etika Profesi akan membahas materi-materi yang
+                menyangkut bagaimana kode etik dan hal-hal lainnya yang
+                berkaitan dengan profesi sebagai akuntan.
+              </p>
+            </li>
+            <li>
+              <span>Aplikasi Pengolah Angka </span>
+              <p class="text-base text-zinc-900">
+                Pada mata pelajaran ini siswa akan mempelajari aplikasi pengolah
+                angka yang dapat digunakan untuk mempermudah proses kerja
+                akuntansi.
+              </p>
+            </li>
+            <li>
+              <span>Akuntansi Dasar </span>
+              <p class="text-base text-zinc-900">
+                Mata pelajaran ini akan membahas dasar-dasar ilmu akuntansi,
+                seperti konsep debit-kredit, neraca keuangan, atau menyajikan
+                laporan keuangan.
+              </p>
+            </li>
+            <li>
+              <span>Perbankan Dasar </span>
+              <p class="text-base text-zinc-900">
+                Materi dasar-dasar perbankan yang akan diajarkan antara lain
+                adalah sejarah uang, sejarah bank, fungsi bank, serta sistem
+                operasional lembaga perbankan.
+              </p>
+            </li>
+            <li>
+              <span
+                >Praktikum Akuntansi Perusahaan Jasa, Dagang dan Manufaktur
+              </span>
+              <p class="text-base text-zinc-900">
+                Pada mata pelajaran ini materi yang dipelajari adalah mengenai
+                buku besar dan kegunaannya, menentukan debet dan kredit,
+                melakukan posting (pemindahan) entri jurnal ke buku besar hingga
+                menyajikan hasil posting entri jurnal ke dalam buku besar
+              </p>
+            </li>
+            <li>
+              <span>Praktikum Akuntansi Lembaga/Instansi Pemerintah </span>
+              <p class="text-base text-zinc-900">
+                Mata pelajaran ini akan membahas mengenai pengelolaan keuangan
+                desa, perencanaan dan penganggaran keuangan desa, hingga
+                mengolah perpajakan pada lembaga desa.
+              </p>
+            </li>
+            <li>
+              <span>Akuntansi Keuangan </span>
+              <p class="text-base text-zinc-900">
+                Akuntansi Keuangan akan membahas tentang penyajian laporan
+                keuangan kepada pihak luar berupa laporan neraca, rugi laba,
+                perubahan modal dan arus kas kepada pemegang saham, kreditor,
+                supplier dan pemerintah khususnya tentang profitabilitas dan
+                kredibilitas perusahaan.
+              </p>
+            </li>
+            <li>
+              <span>Komputer Akuntansi </span>
+              <p class="text-base text-zinc-900">
+                Mata pelajaran komputer akuntansi akan membahas mengenai sistem
+                akuntansi yang menggunakan teknologi komputer untuk menjalankan
+                berbagai aplikasi-aplikasi yang dibutuhkan untuk melakukan
+                proses pengelolaan keuangan.
+              </p>
+            </li>
+            <li>
+              <span>Administrasi Pajak </span>
+              <p class="text-base text-zinc-900">
+                Dalam mata pelajaran administrasi pajak, siswa akan mempelajari
+                hal-hal yang berkaitan dengan perpajakan. Misalnya pengertian
+                pajak, fungsi pajak, kedudukan pajak, jenis-jenis pajak, tata
+                cara pemungutan pajak, dan hal-hal lainnya yang berkaitan dengan
+                pajak.
+              </p>
+            </li>
+            <li>
+              <span>Produk Kreatif Dan Kewirausahaan </span>
+              <p class="text-base text-zinc-900">
+                Pada mata pelajaran ini siswa akan mempelajari ilmu mengenai
+                kewirausahaan dan akan diperkenalkan dengan berbagai produk
+                kreatif yang bisa menjadi peluang wirausaha.
+              </p>
+            </li>
+          </ul>
+          <h2 class="text-2xl lg:text-3xl">
+            Peluang Kerja SMK Jurusan Akuntansi dan Keuangan Lembaga
+          </h2>
+          <p class="text-base text-zinc-900">
+            Hingga saat ini SMK Jurusan Akuntansi dan Keuangan Lembaga masik
+            banyak diminati. Hal tersebut karena prospek karier yang cukup
+            menjanjikan bagi para lulusannya. Tiap perusahaan pasti membutuhkan
+            tenaga profesional untuk mengatur keuangannya. Berikut ini adalah
+            beberapa peluang kerja bagi lulusan SMK Jurusan Akuntansi dan
+            Keuangan Lembaga :
+          </p>
+          <ul class="flex flex-col gap-1 list-disc pl-5">
+            <li>
+              <span>Staff Akuntan</span>
+              <p class="text-base text-zinc-900">
+                Staff akuntan memiliki tugas untuk mengelola keuangan pada
+                sebuah perusahaan.
+              </p>
+            </li>
+            <li>
+              <span>Internal Auditor</span>
+              <p class="text-base text-zinc-900">
+                Tugas seorang internal auditor adalah mengurus dan memastikan
+                seluruh laporan keuangan perusahaan telah sesuai dengan prosedur
+                dan tidak ada penyimpangan dari alokasi-alokasi keuangan
+                tersebut.
+              </p>
+            </li>
+            <li>
+              <span>Perencana Keuangan</span>
+              <p class="text-base text-zinc-900">
+                Perencana keuangan bertugas untuk mengatur seluruh keuangan
+                kliennya.
+              </p>
+            </li>
+            <li>
+              <span>Credit Analyst</span>
+              <p class="text-base text-zinc-900">
+                Seorang credit analyst bertugas utnuk menganalisis kemampuan
+                nasabah atau klien dalam membayar kredit yang mereka ajukan
+                melalui beberapa aspek yang dimiliki oleh nasabah tersebut.
+              </p>
+            </li>
+            <li>
+              <span>Kasir</span>
+              <p class="text-base text-zinc-900">
+                Seorang lulusan akuntansi pastinya memiliki keahlian dalam
+                menghitung yang cukup baik. Keahlian ini akan sangat bermanfaat
+                jika kamu bekerja sebagai kasir.
+              </p>
+            </li>
+            <li>
+              <span>Teller Bank</span>
+              <p class="text-base text-zinc-900">
+                Tugas seorang teller antara lain adalah melayani penarikan,
+                transfer dan penyetoran uang dari pelanggan hingga melakukan
+                pemeriksaan kas.
+              </p>
+            </li>
+            <li>
+              <span>Customer Service Bank</span>
+              <p class="text-base text-zinc-900">
+                Meskipun tidak berhubungan langsung dengan uang, namun dengan
+                ilmu akuntansi yang sudah dimilliki tentu akan lebih paham
+                mengenai permasalahan-permasalahan yang ditanyakan oleh nasabah.
+              </p>
+            </li>
+            <li>
+              <span>Budgeting Staff</span>
+              <p class="text-base text-zinc-900">
+                Budgeting staff bertugas untuk menyusun, mengelola, dan membuat
+                laporan mengenai anggaran yang dibutuhkan oleh suatu perusahaan
+              </p>
+            </li>
+            <li>
+              <span>Staff Inkaso</span>
+              <p class="text-base text-zinc-900">
+                Tugas seorang staff inkaso adalah untuk menyiapkan
+                dokumen-dokumen penagihan, serta mengontrol dan mencatat
+                hasil-hasil penagihan perusahaan.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <footer class="flex flex-col">
+        <div
+          class="z-20 flex flex-col lg:flex-row justify-center gap-5 px-5 py-10 bg-[#26b9a6] text-white"
+        >
+          <div class="w-full lg:w-1/3 flex flex-col">
+            <h3 class="font-semibold text-xl mb-3">Information</h3>
+            <ul class="flex flex-col gap-1">
+              <li>
+                <a href=""
+                  >Jl. Olah Raga No.2, RT.12/RW.5, Cililitan, Kec. Kramat jati,
+                  Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta</a
+                >
+              </li>
+              <li><a href="">Hotline : 021 812345678</a></li>
+              <li><a href="">Whatsapp : +62 8123 456 789</a></li>
+              <li><a href="">E-Mail : humas@smktrampil.sch.id</a></li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-1/4 flex flex-col">
+            <h3 class="font-semibold text-xl mb-3">Feature</h3>
+            <ul class="flex flex-col gap-1">
+              <li><a href="">Visi, Misi dan Tujuan</a></li>
+              <li><a href="">Fasilitas</a></li>
+              <li><a href="">Jurusan</a></li>
+              <li><a href="">Pendaftaran</a></li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-1/4 flex flex-col">
+            <h3 class="font-semibold text-xl mb-3">Social Media</h3>
+            <ul class="flex flex-col gap-1">
+              <li><a href="">Facebook Official</a></li>
+              <li><a href="">Instagram Official</a></li>
+              <li><a href="">YouTube Official</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="z-10 w-full h-14 bg-[#26c7b1] text-white flex justify-center items-center"
+        >
+          <span>Copyright 2024 @ SMK Trampil</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
