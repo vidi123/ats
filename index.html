@@ -43,6 +43,148 @@
         }
       }
 
+      /* Projects */
+      #prev,
+      #next {
+        background: white;
+        padding: 2px 5px;
+        font-weight: 200;
+        font-size: 15px;
+        cursor: pointer;
+        margin: 0 0.5em;
+        width: fit-content;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: transl;
+      }
+
+      #prev {
+        left: 20px;
+      }
+      #next {
+        left: 90px;
+      }
+
+      #carousel-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+      }
+      #carousel-content {
+        height: 100%;
+      }
+      #carousel-dots {
+        position: absolute;
+        bottom: 150px;
+      }
+      #carousel-content,
+      #carousel-dots {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        width: 500px;
+        height: 300px;
+        background-color: white;
+        margin: 0 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.8s ease-in;
+        opacity: 0;
+        border-radius: 7px;
+        box-shadow: 0px 0px 45px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .hidden {
+        display: none;
+      }
+      .left {
+        position: absolute;
+        transform-origin: center;
+        animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+        transform: translateX(-30%) scale(0.85);
+        opacity: 1 !important;
+        z-index: 0;
+      }
+
+      .selected {
+        transform-origin: center;
+        animation: card-in 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+        transform: translateX(0%);
+        opacity: 1 !important;
+        z-index: 1;
+      }
+
+      .right {
+        position: absolute;
+        transform-origin: center;
+        animation: new-card 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+        transform: translateX(22%) scale(0.85);
+        opacity: 1 !important;
+        z-index: 0;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(200, 200, 200);
+        border-radius: 50%;
+        margin: 0 0.5rem;
+        cursor: pointer;
+      }
+
+      .active-dot {
+        transform: scale(1.2);
+        background-color: rgb(120, 120, 120);
+      }
+
+      @keyframes card-in {
+        0% {
+          z-index: 1;
+        }
+        50% {
+          transform: translateX(30%);
+        }
+        80% {
+          z-index: 20;
+          transform: translateX(0px);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      @keyframes card-out {
+        0% {
+          z-index: 20;
+          transform: translateX(0px);
+        }
+        50% {
+          transform: translateX(-30%);
+        }
+        80% {
+          z-index: 1;
+        }
+        100% {
+          transform: translateX(-30%) scale(0.85);
+        }
+      }
+
+      @keyframes new-card {
+        from {
+          transform: translateX(0%) scale(0.5);
+        }
+        to {
+          transform: translateX(22%) scale(0.85);
+        }
+      }
+
       /* Tambahan CSS untuk tampilan mobile */
       @media (max-width: 768px) {
         .navbar {
@@ -64,7 +206,7 @@
   </head>
   <body class="">
     <!-- Navbar Desktop -->
-    <nav class="z-20 w-full hidden lg:block fixed top-0 bg-white p-4">
+    <nav class="z-30 w-full hidden lg:block fixed top-0 bg-white p-4">
       <div class="mx-24 flex justify-between items-center">
         <a href="#" class="flex items-center gap-4 lg:text-xl font-bold">
           <img src="./images/Logo2.png" alt="Logo" class="w-14 h-12" />
@@ -97,7 +239,7 @@
     </nav>
 
     <!-- Navbar Mobile -->
-    <nav class="z-20 w-full mobile-navbar bg-white p-4 fixed top-0">
+    <nav class="z-30 w-full mobile-navbar bg-white p-4 fixed top-0">
       <div class="container mx-auto flex justify-between items-center">
         <a href="#" class="flex items-center gap-4 text-2xl font-bold">
           <img src="./images/Logo2.png" alt="Logo" class="w-12 h-12" />
@@ -160,7 +302,7 @@
     >
       <!-- Hero -->
       <div
-        class="h-screen bg-black bg-opacity-50 flex lg:flex-row gap-5 px-8 mt-[100px] lg:mt-0"
+        class="h-screen bg-black bg-opacity-50 flex lg:flex-row gap-5 px-8 mt-0"
       >
         <div
           class="lg:w-full flex flex-col gap-6 justify-center items-center"
@@ -203,10 +345,8 @@
           </h2>
           <p class="text-lg text-gray-600 font-medium text-justify">
             PT. AGUNG TECHNOLOGY SOLUTIONS adalah perusahaan teknologi yang
-            bergerak dibidang pengembangan Website dan pemasangan CCTV. Seiring
-            berkembangnya PT. AGUNG TECHNOLOGY SOLUTIONS kini terdapat beberapa
-            team pengembang dalam tiap projectnya dengan kantor yang berletak di
-            Kota Bekasi.
+            bergerak dibidang pengembangan Website dan pemasangan CCTV sejak
+            tahun 2017 dengan kantor yang berletak di Kota Bekasi.
           </p>
           <p class="text-lg text-gray-600 font-medium text-justify">
             Dengan menghadirkan solusi untuk setiap permasalahan tentang
@@ -221,32 +361,30 @@
       >
         <h2 class="text-white text-3xl font-semibold">Projects</h2>
         <div class="flex flex-col items-center gap-5 lg:gap-8">
-          <div
-            class="w-[90%] lg:w-[50%] px-2 py-3 bg-white flex flex-col items-center gap-3 rounded shadow-xl"
-            data-aos="zoom-in"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-          >
-            <img src="./images/project1.png" alt="" />
-          </div>
-          <div
-            class="w-[90%] lg:w-[50%] px-2 py-3 bg-white flex flex-col items-center gap-3 rounded shadow-xl"
-            data-aos="zoom-in"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-          >
-            <img src="./images/project2.png" alt="" />
-          </div>
-          <div
-            class="w-[90%] lg:w-[50%] px-2 py-3 bg-white flex flex-col items-center gap-3 rounded shadow-xl"
-            data-aos="zoom-in"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-          >
-            <img src="./images/project3.png" alt="" />
+          <div class="main">
+            <div id="carousel-container">
+              <div id="carousel-content">
+                <div
+                  class="card hidden w-[60%] h-fit lg:w-[50%] px-2 py-3 bg-zinc-50 flex flex-col items-center gap-3 rounded shadow-xl"
+                >
+                  <img src="./images/project1.png" alt="" class="scale-100" />
+                </div>
+                <div
+                  class="card hidden w-[60%] h-fit lg:w-[50%] px-2 py-3 bg-zinc-50 flex flex-col items-center gap-3 rounded shadow-xl"
+                >
+                  <img src="./images/project2.png" alt="" class="scale-100" />
+                </div>
+                <div
+                  class="card hidden w-[60%] h-fit lg:w-[50%] px-2 py-3 bg-zinc-50 flex flex-col items-center gap-3 rounded shadow-xl"
+                >
+                  <img src="./images/project3.png" alt="" class="scale-100" />
+                </div>
+                <!-- <div class="card hidden">0</div>
+                <div class="card hidden">1</div>
+                <div class="card hidden">gjjh</div> -->
+              </div>
+              <div id="carousel-dots" class="" style="display: none"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -326,6 +464,190 @@
             this.classList.remove("text-white");
           }
         });
+
+      // Projects
+      // object
+
+      class Carousel {
+        constructor(container, autoplay, playspeed, dots) {
+          this.container = container;
+          this.childs = container.childElementCount;
+          this.toShow = 3;
+          this.autoplay = autoplay;
+          this.playSpeed = playspeed;
+          this.dots = dots;
+          this.cards = [];
+        }
+
+        init() {
+          //reset interval si actif quelque part
+          window.clearInterval(this.interval);
+          // Active les points si true
+          this.dots == true ? this.initDots() : "";
+          this.getCards();
+
+          // Affiche uniquement le nombre de cartes définies
+          this.cards.forEach((card) => {
+            const index = this.cards.indexOf(card);
+            if (index < this.toShow) {
+              card.classList.toggle("hidden");
+            }
+
+            // Défini les tailles des cartes
+            this.setSize(index, card);
+            card.id = `card-${index}`;
+          });
+
+          // Active l'autoplay si true
+          if (this.autoplay == true) {
+            this.autoPlay();
+          }
+        }
+
+        update(id = null, forced = false, index = null) {
+          // Mets a jour les cartes quand boutons pressés
+          if (id == "prev") {
+            const lastEl = this.container.children[this.childs - 1];
+            this.container.insertAdjacentElement("afterbegin", lastEl);
+          }
+          if (id == "next") {
+            const firstEl = this.container.children[0];
+            this.container.insertAdjacentElement("beforeend", firstEl);
+          }
+
+          this.getCards();
+
+          if (forced == true && index != null) {
+            let arr = [];
+            let items = document.createDocumentFragment();
+
+            arr[0] = index == 0 ? this.cards.length - 1 : index - 1;
+            arr[1] = index;
+            arr[2] = index == this.cards.length - 1 ? 0 : index + 1;
+            for (let i = 3; i < this.cards.length; i++) {
+              arr[i] =
+                arr[i - 1] + 1 > this.cards.length - 1 ? 0 : arr[i - 1] + 1;
+            }
+
+            for (let j = 0; j < arr.length; j++) {
+              let element = this.cards.filter(
+                (card) => parseInt(card.id.split("-")[1]) == arr[j]
+              );
+              items.append(element[0]);
+            }
+
+            this.container.innerHTML = null;
+            this.container.append(items);
+          }
+
+          // Reset les classes et défini lequelles doivent être affichées
+          this.cards.forEach((card) => {
+            card.classList.remove("hidden", "left", "selected", "right");
+
+            if (this.cards.indexOf(card) > this.toShow - 1) {
+              if (!card.classList.contains("hidden")) {
+                card.classList.add("hidden");
+              }
+            }
+
+            // Défini la taille des cartes et le dot à activer
+            this.setSize(this.cards.indexOf(card), card);
+            this.updateDots();
+          });
+        }
+
+        getCards() {
+          // Récupère les cartes dans le bon ordre
+          this.cards = [];
+          for (let i = 0; i < this.childs; i++) {
+            this.cards.push(this.container.children[i]);
+          }
+        }
+
+        setSize(index, card) {
+          // Assigne la bonne classe en fonction de la position
+          switch (index) {
+            case 0:
+              card.classList.add("left");
+              break;
+            case 1:
+              card.classList.add("selected");
+              break;
+            case 2:
+              card.classList.add("right");
+              break;
+          }
+        }
+
+        initDots() {
+          // Crée les dots et
+          const dots = document.getElementById("carousel-dots");
+
+          this.getCards();
+          this.cards.forEach((card) => {
+            const dot = document.createElement("div");
+            dot.id = `dot-${this.cards.indexOf(card)}`;
+
+            if (this.cards.indexOf(card) == 1) {
+              dot.classList.add("active-dot");
+            }
+
+            dot.classList.add("dot");
+            dots.insertAdjacentElement("beforeend", dot);
+
+            dot.addEventListener("click", () => {
+              this.clearInterval();
+              this.update("", true, parseInt(dot.id.split("-")[1]));
+            });
+          });
+        }
+
+        updateDots() {
+          const dots = document.getElementsByClassName("dot");
+          this.getCards();
+
+          Array.from(dots).forEach((dot) => {
+            dot.classList.remove("active-dot");
+
+            if (
+              parseInt(dot.id.split("-")[1]) == this.cards[1].id.split("-")[1]
+            ) {
+              dot.classList.add("active-dot");
+            }
+          });
+        }
+
+        autoPlay() {
+          this.interval = setInterval(() => {
+            this.update("next");
+          }, this.playSpeed);
+        }
+
+        clearInterval() {
+          window.clearInterval(this.interval);
+        }
+      }
+
+      // simple code to create a carousel from any container
+
+      const carouselContainer = document.getElementById("carousel-content");
+      //const prev = document.getElementById('prev')
+      //const next = document.getElementById('next')
+
+      const carousel = new Carousel(carouselContainer, true, 5000, true); // container, autoplay, speed, dots
+      carousel.init();
+
+      // UNCOMMENT IF YOU WANT TO USE BUTTONS
+
+      // prev.addEventListener('click', () => {
+      //   const id = prev.id
+      //   carousel.update(id)
+      // })
+      //
+      // next.addEventListener('click', () => {
+      //   const id = next.id
+      //   carousel.update(id)
+      // })
     </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
